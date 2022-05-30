@@ -51,6 +51,7 @@ $(function () {
           success:(res) => {
             if (res.status !== 0) return layer.msg("登录成功  !");
             layer.msg("登录失败！");  
+            // 获取token 的值并保存到本地
             localStorage.setItem("token",res.token);
             location.href = "/index.html"
             // console.log(res);
