@@ -1,8 +1,8 @@
-function getUserInfo(){
+function getUserInfo() {
     $.ajax({
-        type:'GET',
-        url:"/my/userinfo",
-        data:null,
+        type: 'GET',
+        url: "/my/userinfo",
+        data: null,
         headers: {
             Authorization: localStorage.getItem("token"),
         },
@@ -20,11 +20,11 @@ function getUserInfo(){
         // 渲染欢迎语
         $('#welcome').html(`欢迎 ${uname}`);
         // 按需求渲染头像
-        if(user.user_pic !== null){
+        if (user.user_pic !== null) {
             // 渲染图片头像
-            $(".layui-nav-img").attr("src",user.user_pic).show();
+            $(".layui-nav-img").attr("src", user.user_pic).show();
             $(".text-avatar").hide();
-        }else{
+        } else {
             $(".layui-nav-img").hide();
             $(".text-avatar").html(uname[0].toUpperCase())
         }
@@ -42,4 +42,7 @@ function getUserInfo(){
         );
     });
 }
-getUserInfo()
+getUserInfo();
+function change() {
+    $("#change").attr("class", "layui-this").next().attr("class", "")
+}
